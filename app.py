@@ -5,11 +5,15 @@ import google.generativeai as genai
 # --- Set API key ---
 genai.configure(api_key="AIzaSyBbuapBRkFgPLwXIwIWdxwXvdtq4cRkFm0")  # replace with your Gemini API key
 
-st.set_page_config(
-    page_title="Study Bot 💡 BY ColourVOLT✨⚡",
-    page_icon="✨⚡",
-    layout="centered"
-)
+# --- Hide Streamlit top-right menu, footer, and header ---
+hide_streamlit_style = """
+    <style>
+    #MainMenu {visibility: hidden;}     /* Hides the hamburger menu */
+    footer {visibility: hidden;}        /* Hides footer */
+    header {visibility: hidden;}        /* Hides header (streamlit logo) */
+    </style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 # --- CSS Styling ---
 st.markdown("""
