@@ -87,7 +87,10 @@ if st.button("Send") and user_input.strip() != "":
         st.session_state.chat.append(("bot", answer))
 
 # --- Display Chat (latest on top) ---
-for role, msg in reversed(st.session_state.chat):
+# --- Session State ---
+if "chat" not in st.session_state:
+    st.session_state.chat = []   # Initialize empty chat list
+
     if role == "user":
         st.markdown(f"""
         <div style='
