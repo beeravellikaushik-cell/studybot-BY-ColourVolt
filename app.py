@@ -24,19 +24,27 @@ st.markdown("""
         color: white;
     }
 
-    /* Add floating thunderbolts */
+    /* Neon thunderbolts ⚡ */
     .thunder {
         position: fixed;
-        font-size: 18px;
+        font-size: 22px;
         color: #FFD700;
-        animation: float 6s linear infinite;
-        opacity: 0.7;
+        text-shadow: 0 0 5px #ffff66, 0 0 10px #ffcc00, 0 0 20px #ffff99;
+        animation: float 6s linear infinite, glow 2s ease-in-out infinite alternate;
+        opacity: 0.85;
     }
 
+    /* Floating animation */
     @keyframes float {
-        0% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
-        50% { transform: translateY(-20px) rotate(15deg); opacity: 1; }
-        100% { transform: translateY(0px) rotate(-15deg); opacity: 0.7; }
+        0% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(15deg); }
+        100% { transform: translateY(0px) rotate(-15deg); }
+    }
+
+    /* Pulsing glow */
+    @keyframes glow {
+        from { text-shadow: 0 0 5px #ffff66, 0 0 10px #ffcc00, 0 0 20px #ffff99; }
+        to   { text-shadow: 0 0 10px #ffffcc, 0 0 20px #ffff33, 0 0 40px #ffffff; }
     }
     </style>
 
