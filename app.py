@@ -90,9 +90,7 @@ if st.button("Send") and user_input.strip() != "":
 # --- Session State ---
 if "chat" not in st.session_state:
     st.session_state.chat = []   # Initialize empty chat list
-
-    if role == "user":
-        st.markdown(f"""
+       st.markdown(f"""
         <div style='
             background: linear-gradient(120deg,#a6c0fe,#f68084);
             padding:12px;
