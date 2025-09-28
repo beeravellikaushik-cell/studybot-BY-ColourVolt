@@ -87,10 +87,16 @@ if st.button("Send") and user_input.strip() != "":
         st.session_state.chat.append(("bot", answer))
 
 # --- Display Chat (latest on top) ---
+
+    # --- Session State ---
 # --- Session State ---
 if "chat" not in st.session_state:
     st.session_state.chat = []   # Initialize empty chat list
-       st.markdown(f"""
+
+# --- Display Chat (latest on top) ---
+for role, msg in reversed(st.session_state.chat):
+    if role == "user":
+        st.markdown(f"""
         <div style='
             background: linear-gradient(120deg,#a6c0fe,#f68084);
             padding:12px;
