@@ -36,14 +36,14 @@ if "chat" not in st.session_state:
     st.session_state.chat = []
 
 # --- Title ---
-st.title("Study Bot 💡")
+st.title("⚡ Study Bot - Powered by ColourVolt ⚡")
 st.markdown("Ask me anything and I'll drop knowledge bombs! 💥")
 
 # --- Gemini Model (latest working one) ---
 model = genai.GenerativeModel("models/gemini-2.5-flash")
 
 # --- User Input ---
-user_input = st.text_input("Type your question here...")
+user_input = st.text_input("Ask me anything:")
 
 if st.button("Send") and user_input.strip() != "":
     st.session_state.chat.append(("user", user_input))
